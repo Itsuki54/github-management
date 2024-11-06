@@ -1,10 +1,13 @@
 .container {
-  padding: 20px;
+  padding: 10px;
   background-color: #121212;
   border-radius: 10px;
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -14,16 +17,22 @@
   border-bottom: 2px solid #333;
   padding-bottom: 5px;
   color: #e91e63;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .totalCount {
   font-size: 1rem;
   color: #b0bec5;
   margin-bottom: 20px;
+  text-align: center;
+  flex-shrink: 0;
 }
-
+/*
 .items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: auto;
+  max-height:500px;
+} */

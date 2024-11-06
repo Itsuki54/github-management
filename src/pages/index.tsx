@@ -1,6 +1,7 @@
 import { List } from '@/components/list';
 import { Issue } from '@/types/github';
 import { useEffect, useState } from 'react';
+import styles from './index.module.css';
 
 export default function Home() {
   const [data, setData] = useState<{
@@ -30,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/github');
+        const response = await fetch('/api/github?param=open');
         const result = await response.json();
         console.log('result:', result);
         setData(result);
@@ -43,12 +44,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>GitHub Dashboard</h1>
-      <List data={data.assignedIssues} group="Assigned Issues" />
-      <List data={data.assignedPRs} group="Assigned Pull Requests" />
-      <List data={data.reviewRequestedPRs} group="Review Requested Pull Requests" />
-      <List data={data.mentions} group="Mentions" />
+    <div className={styles.container}>
+      <div className={styles.lists}>
+          <List data={data.assignedIssues} group="Issue" />
+          <List data={data.assignedPRs} group="PR" />
+          <List data={data.reviewRequestedPRs} group="Review" />
+          <List data={data.mentions} group="Mention" />
+      </div>
     </div>
   );
 }
