@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  color: #e91e63;
+}
+
+.totalCount {
+  font-size: 1rem;
+  color: #b0bec5;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}

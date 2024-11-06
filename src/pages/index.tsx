@@ -1,17 +1,30 @@
+import { List } from '@/components/list';
 import { Issue } from '@/types/github';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [data, setData] = useState<{
-    assignedIssues: Issue[];
-    assignedPRs: Issue[];
-    reviewRequestedPRs: Issue[];
-    mentions: Issue[];
+    assignedIssues: Issue;
+    assignedPRs: Issue;
+    reviewRequestedPRs: Issue;
+    mentions: Issue;
   }>({
-    assignedIssues: [],
-    assignedPRs: [],
-    reviewRequestedPRs: [],
-    mentions: [],
+    assignedIssues: {
+      total_count: 0, items: [],
+      incomplete_results: false
+    },
+    assignedPRs: {
+      total_count: 0, items: [],
+      incomplete_results: false
+    },
+    reviewRequestedPRs: {
+      total_count: 0, items: [],
+      incomplete_results: false
+    },
+    mentions: {
+      total_count: 0, items: [],
+      incomplete_results: false
+    },
   });
 
   useEffect(() => {
@@ -32,8 +45,10 @@ export default function Home() {
   return (
     <div>
       <h1>GitHub Dashboard</h1>
-
-      <h2>Assigned Issues and PRs</h2>
+      <List data={data.assignedIssues} group="Assigned Issues" />
+      <List data={data.assignedPRs} group="Assigned Pull Requests" />
+      <List data={data.reviewRequestedPRs} group="Review Requested Pull Requests" />
+      <List data={data.mentions} group="Mentions" />
     </div>
   );
 }

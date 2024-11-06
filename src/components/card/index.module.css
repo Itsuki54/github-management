@@ -1,0 +1,109 @@
+.card {
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeader {
+  display: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.cardState {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: #f0ad4e;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.cardContent {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.cardRepo {
+  margin: 8px 0;
+  color: #9aa0a6;
+}
+
+.cardUser {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.userName {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.cardMeta {
+  margin-top: 10px;
+  color: #b0bec5;
+}
+
+.cardLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.label {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #000;
+  background-color: #ccc;
+}
+
+.cardPr {
+  margin-top: 12px;
+}
+
+.prBadge {
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #ff9800;
+  color: #fff;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.cardFooter {
+  font-size: 0.8rem;
+  color: #9aa0a6;
+  margin-top: 16px;
+  border-top: 1px solid #333;
+  padding-top: 8px;
+}
