@@ -1,40 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+### Setting Up Environment Variables
 
-## Getting Started
+Before running the application, you need to configure the following environment variables in a `.env` file:
 
-First, run the development server:
+```
+GITHUB_ACCESS_TOKEN=your_github_access_token
+GITHUB_USERNAME=your_github_username
+```
+
+- `GITHUB_ACCESS_TOKEN`: Provide your GitHub personal access token. For instructions on how to generate one, refer to the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+- `GITHUB_USERNAME`: Enter your GitHub username.
+
+Once the `.env` file is set up, you can start the development environment by running the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the application in development mode.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+This application allows you to view and manage GitHub issues and pull requests (PRs) with advanced filtering and sorting options. It fetches data from GitHub via an API and displays it in an organized manner. Below are the main features you can use:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 1. **Filter by State**
+You can filter the displayed issues and pull requests by their state:
+- **All States**: Shows both open and closed items.
+- **Open**: Shows only open issues and PRs.
+- **Closed**: Shows only closed issues and PRs.
 
-## Learn More
+#### 2. **Filter by Repository**
+You can filter the items based on the repository. You can either select:
+- **All Repositories**: Displays items from all repositories.
+- Specific repositories: Select from a list of available repositories that contain issues and PRs assigned to you or where you're mentioned.
 
-To learn more about Next.js, take a look at the following resources:
+#### 3. **Sort by Criteria**
+You can sort the items based on the following criteria:
+- **Created Date**: Sorts by the creation date of the issue/PR.
+- **Updated Date**: Sorts by the last update date of the issue/PR.
+- **Comments**: Sorts based on the number of comments.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+#### 4. **Sort Order**
+You can change the sorting order between:
+- **Ascending (asc)**: Sorts from the earliest date or fewest comments to the latest date or most comments.
+- **Descending (desc)**: Sorts from the latest date or most comments to the earliest date or fewest comments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 5. **View Issues and PRs**
+The application displays the following categories:
+- **Assigned Issues**: Issues that are assigned to you.
+- **Assigned PRs**: Pull requests that are assigned to you.
+- **Review Requested PRs**: Pull requests where you're requested for a review.
+- **Mentions**: Issues and PRs where you are mentioned.
 
-## Deploy on Vercel
+You can interact with each category individually, apply different filters, and sort the list to make it easier to track and manage the work assigned to you.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+This summary gives users a clear understanding of how they can interact with the data in the application using the filters and sorting options. You can add this section under **Features** or **Usage** in your README for easy reference.
