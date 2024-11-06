@@ -3,7 +3,6 @@ import styles from "./index.module.css";
 
 export function Card({ item }: { item: Item }) {
   const titleClass = item.state === 'closed' ? styles.cardTitleClosed : styles.cardTitleOpen;
-
   return (
     <div className={styles.card} onClick={() => window.open(item.html_url, '_blank')}>
       <div className={styles.cardHeader}>

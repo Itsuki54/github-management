@@ -52,38 +52,12 @@
   background-color: #f0ad4e;
   color: #fff;
   text-transform: uppercase;
-
 }
 
 .cardContent {
   font-size: 14px;
-}
-
-.cardRepo,
-.cardUser,
-.cardMeta {
-  margin-bottom: 8px;
-}
-
-.cardUser {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.userAvatar {
-  border-radius: 50%;
-}
-
-.cardLabels {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.label {
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  color: #fff;
+    white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
