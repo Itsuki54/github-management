@@ -1,6 +1,6 @@
-import { Card } from '@/components/card';
-import { Issue } from '@/types/github';
-import styles from './index.module.css';
+import { Card } from "@/components/card";
+import { Issue } from "@/types/github";
+import styles from "./index.module.css";
 
 type Props = {
   data: Issue;
@@ -13,9 +13,7 @@ export function List({ data, group }: Props) {
       <h1 className={styles.header}>{group}</h1>
       <p className={styles.totalCount}>合計:{data.items.length}</p>
       <div className={styles.items}>
-        {data.items.map((item) => (
-          <Card key={item.id} item={item} />
-        ))}
+        {data.items.map((item) => <Card key={item.id} item={item} />)}
       </div>
     </div>
   );

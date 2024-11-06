@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { NextApiRequest, NextApiResponse } from 'next';
+import axios from "axios";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { param } = req.query;
@@ -9,27 +9,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     Authorization: `token ${token}`,
   };
 
-  const statusFilter = param === 'closed' ? 'is:closed' : param === 'open' ? 'is:open' : '';
+  const statusFilter = param === "closed" ? "is:closed" : param === "open" ? "is:open" : "";
 
   try {
     const assignedIssues = await axios.get(
       `https://api.github.com/search/issues?q=assignee:${username}+${statusFilter}+is:issue`,
-      { headers }
+      { headers },
     );
 
     const assignedPRs = await axios.get(
       `https://api.github.com/search/issues?q=assignee:${username}+${statusFilter}+is:pr`,
-      { headers }
+      { headers },
     );
 
     const reviewRequestedPRs = await axios.get(
       `https://api.github.com/search/issues?q=review-requested:${username}+${statusFilter}+is:pr`,
-      { headers }
+      { headers },
     );
 
     const mentions = await axios.get(
       `https://api.github.com/search/issues?q=mentions:${username}+${statusFilter}`,
-      { headers }
+      { headers },
     );
 
     res.status(200).json({
@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       mentions: mentions.data,
     });
   } catch (error) {
-    console.error('GitHubデータの取得エラー:', error);
-    res.status(500).json({ error: 'GitHubデータの取得に失敗しました' });
+    console.error("GitHubデータの取得エラー:", error);
+    res.status(500).json({ error: "GitHubデータの取得に失敗しました" });
   }
 }

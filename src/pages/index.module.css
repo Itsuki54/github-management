@@ -1,10 +1,11 @@
 .container {
+  justify-items: center;
   padding: 40px;
   height: 100vh;
   background-color: #1e1e1e;
   color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .header {
