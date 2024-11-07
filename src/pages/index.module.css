@@ -20,10 +20,10 @@
 
 .lists {
   display: flex;
-  flex-wrap: nowrap; /* 横一列に並べる */
+  flex-wrap: nowrap;
   gap: 20px;
-  justify-content: flex-start; /* 左寄せに変更 */
-  overflow-x: auto; /* 横スクロールが可能になる */
+  justify-content: flex-start;
+  overflow-x: auto;
 }
 
 .listCard {
