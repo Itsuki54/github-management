@@ -5,6 +5,8 @@ Before running the application, you need to configure the following environment 
 ```
 GITHUB_ACCESS_TOKEN=your_github_access_token
 GITHUB_USERNAME=your_github_username
+USER=your_username
+PASSWORD=your_password
 ```
 
 - `GITHUB_ACCESS_TOKEN`: Provide your GitHub personal access token. For instructions on how to generate one, refer to the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
